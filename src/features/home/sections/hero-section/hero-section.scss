@@ -1,0 +1,64 @@
+.hero-highlight{
+    color: #F56FA1;
+}
+
+.hero-title{
+    font-size: clamp(2.4rem, 3.2vw + 1rem, 4rem);
+}
+
+.for-us{
+    text-decoration: underline;
+    color: #F56FA1;
+  }
+
+  .hero-subtitle{
+    max-width: 38rem;
+  }
+
+  .services{
+    border-color: #F56FA1;
+    color: #F56FA1;
+    font-weight: 600;
+    padding-inline: 1.6rem;
+    background-color: white;
+  }
+  
+  .services:hover{
+    border-color: #F56FA1;
+    color: white;
+    font-weight: 600;
+    padding-inline: 1.6rem;
+    background-color: #F56FA1;
+  }
+
+  .consultation{
+    border-color: #F56FA1;
+    color: white;
+    font-weight: 600;
+    padding-inline: 1.6rem;
+    background-color: #F56FA1;
+  }
+
+  .consultation:hover{
+    border-color: #F56FA1;
+    color: #F56FA1;
+    font-weight: 600;
+    padding-inline: 1.6rem;
+    background-color: white;
+  }
+
+  .hero-note {
+    font-size: 0.95rem;
+    }
+
+
+.hero-section--divider {
+    padding-bottom: 2.5rem;              // простор под содржината
+    border-bottom: 4px solid #F56FA1; // розева линија
+  }
+
+
+  .cta-section{           // простор под содржината
+    border-bottom: 4px solid #F56FA1;
+  }
+  

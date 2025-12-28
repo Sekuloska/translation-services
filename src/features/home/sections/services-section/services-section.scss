@@ -1,0 +1,61 @@
+.services-section {
+    background: #fff;
+  }
+  
+  .service-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .service-card__icon i {
+    font-size: 28px;
+    color: #111;
+  }
+  
+  .service-card__title {
+    font-size: 1.25rem;
+    margin: 0 0 10px;
+    color: #111;
+  }
+  
+  .service-card__text {
+    color: #444;
+    line-height: 1.7;
+    margin: 0 0 14px;
+    max-width: 44ch;
+  }
+  
+  .service-card__link {
+    margin-top: auto;
+    color: #F56FA1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  
+  .service-media {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    background: #f6f6f6;
+    height: 100%;
+  }
+  
+  .service-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 220px; /* за да личи како “картичка” и на мобилен */
+  }
+  
+  /* optional: на мобилен намали padding за да собере поубаво */
+  @media (max-width: 575.98px) {
+    .service-card { padding: 20px; }
+    .service-card__text { max-width: none; }
+  }
+  

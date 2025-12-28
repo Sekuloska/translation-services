@@ -1,0 +1,25 @@
+.topbar {
+    width: 100%;
+    min-height: 48px;          // висина на барот (можеш 56/64 според вкус)
+    display: flex;
+    align-items: center;       // вертикално центрира содржината
+    background-color: #f8f9fa; // исто како .bg-light, за сигурно
+  }
+  
+  .topbar > .container {
+    width: 100%;
+  }
+  
+  .th-logo-text {
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #F56FA1;
+  }
+  
+  .header-link:hover{
+    color: #ff4fa3;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  
