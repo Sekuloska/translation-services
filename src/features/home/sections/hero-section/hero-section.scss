@@ -1,64 +1,168 @@
+.hero-section {
+  padding-top: 3rem; /* move the content down while retaining background */
+}
+
 .hero-highlight{
-    color: #F56FA1;
+  color: var(--main-pink, #F56FA1);
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .hero-title{
-    font-size: clamp(2.4rem, 3.2vw + 1rem, 4rem);
+  font-size: clamp(2.4rem, 3.2vw + 1rem, 4rem);
+  animation: heroTextReveal 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.hero-title .hero-highlight{
+  display: inline-block;
+}
+
+.hero-title .hero-highlight:hover {
+  transform: scale(1.04);
+  color: var(--main-pink-accent, #ff4fa3);
 }
 
 .for-us{
-    text-decoration: underline;
-    color: #F56FA1;
-  }
+  text-decoration: underline;
+  color: var(--main-pink, #F56FA1);
+}
 
-  .hero-subtitle{
-    max-width: 38rem;
-  }
+.hero-subtitle{
+  max-width: 38rem;
+  color: #333;
+  font-size: 1.05rem;
+  animation: heroTextReveal 0.9s ease 0.15s forwards;
+  opacity: 0;
+  transform: translateY(14px);
+}
 
-  .services{
-    border-color: #F56FA1;
-    color: #F56FA1;
-    font-weight: 600;
-    padding-inline: 1.6rem;
-    background-color: white;
-  }
-  
-  .services:hover{
-    border-color: #F56FA1;
-    color: white;
-    font-weight: 600;
-    padding-inline: 1.6rem;
-    background-color: #F56FA1;
-  }
+.services,
+.consultation {
+  border-color: var(--main-pink, #F56FA1);
+  font-weight: 600;
+  padding-inline: 1.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
 
-  .consultation{
-    border-color: #F56FA1;
-    color: white;
-    font-weight: 600;
-    padding-inline: 1.6rem;
-    background-color: #F56FA1;
-  }
+.services {
+  color: var(--main-pink, #F56FA1);
+  background-color: white;
+}
 
-  .consultation:hover{
-    border-color: #F56FA1;
-    color: #F56FA1;
-    font-weight: 600;
-    padding-inline: 1.6rem;
-    background-color: white;
-  }
+.services:hover {
+  border-color: var(--main-pink-accent, #ff4fa3);
+  color: white;
+  background-color: var(--main-pink, #F56FA1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(245, 111, 161, 0.26);
+}
 
-  .hero-note {
-    font-size: 0.95rem;
-    }
+.services:focus-visible,
+.services:focus,
+.consultation:focus-visible,
+.consultation:focus,
+.services:hover,
+.consultation:hover {
+  outline: none;
+  box-shadow: 0 8px 18px rgba(245, 111, 161, 0.32);
+}
 
+/* Remove default green/prime button hover color from PrimeNG */
+.p-button:hover,
+.p-button:focus,
+.p-button:focus-visible,
+.p-button.p-button-success:hover,
+.p-button.p-button-success:focus {
+  background-color: var(--main-pink, #F56FA1) !important;
+  border-color: var(--main-pink, #F56FA1) !important;
+  color: #fff !important;
+}
+
+.services:active,
+.consultation:active {
+  transform: scale(0.98);
+}
+.consultation {
+  border-color: var(--main-pink, #F56FA1);
+  color: white;
+  background-color: var(--main-pink, #F56FA1);
+}
+
+.consultation:hover {
+  border-color: var(--main-pink, #F56FA1);
+  color: var(--main-pink, #F56FA1);
+  background-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(245, 111, 161, 0.26);
+}
+
+.hero-note {
+  font-size: 0.95rem;
+  opacity: 0;
+  animation: heroTextReveal 1.05s ease 0.3s forwards;
+  transform: translateY(10px);
+}
 
 .hero-section--divider {
-    padding-bottom: 2.5rem;              // простор под содржината
-    border-bottom: 4px solid #F56FA1; // розева линија
+  padding-bottom: 2.5rem;
+  border-bottom: 4px solid var(--main-pink, #F56FA1);
+  background: linear-gradient(140deg, #fff8fb 0%, #ffe8f2 100%);
+}
+
+.hero-image-wrapper {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+}
+
+.hero-image-wrapper img {
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.hero-image-wrapper:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.03) brightness(1.02);
+}
+
+@keyframes heroTextReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-section {
+  border-top: 4px solid var(--main-pink, #F56FA1);
+  border-bottom: 4px solid var(--main-pink, #F56FA1);
+  background: linear-gradient(180deg, #f8c5dc 0%, #e2a6c3 100%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(245, 111, 161, 0.25);
+}
+
+.cta-section h4,
+.cta-section p {
+  animation: heroTextReveal 0.8s ease 0.1s forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 2.5rem;
   }
 
-
-  .cta-section{           // простор под содржината
-    border-bottom: 4px solid #F56FA1;
+  .hero-title {
+    font-size: clamp(2.2rem, 2.7vw + 1rem, 3.4rem);
   }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+}
+
   

@@ -19,9 +19,29 @@ export const routes: Routes = [
                   },
                   {
                     path: 'our-story',
-                    title: 'Услуги • Transhausa',
+                    title: 'Наша приказна • Transhausa',
                     loadComponent: () => import('../features/home/sections/our-story-component/our-story-component').then(m => m.OurStoryComponent)
                   },
+                   {
+                    path: 'contact-us',
+                    title: 'Контакт • Transhausa',
+                    loadComponent: () => import('../features/home/sections/contact-us/contact-us').then(m => m.ContactUs)
+                  },
+                  {
+                    path: 'privacy',
+                    title: 'Приватност • Transhausa',
+                    loadComponent: () => import('./layouts/footer-component/privacy/privacy').then(m => m.PrivacyComponent)
+                  },
+                  {
+                    path: 'terms',
+                    title: 'Услови • Transhausa',
+                    loadComponent: () => import('./layouts/footer-component/terms/terms').then(m => m.TermsComponent)
+                  },
+                  {
+                    path: 'cookies',
+                    title: 'Колачиња • Transhausa',
+                    loadComponent: () => import('./layouts/footer-component/cookies/cookies').then(m => m.CookiesComponent)
+                  }
 
              ],
       },

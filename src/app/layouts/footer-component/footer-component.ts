@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterModule } from "@angular/router";
+import { RouterLink } from '@angular/router';
+import { PrivacyComponent } from './privacy/privacy';
+import { TermsComponent } from './terms/terms';
+import { CookiesComponent } from './cookies/cookies';
 
 @Component({
   selector: 'app-footer-component',

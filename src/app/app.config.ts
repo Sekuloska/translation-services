@@ -1,9 +1,11 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling, withEnabledBlockingInitialNavigation } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
 import Lara from '@primeuix/themes/lara'
+import { cookieConfig } from '../app/layouts/footer-component/cookies/cookie-config';
 
 import { routes } from './app.routes';
+import { provideNgcCookieConsent } from 'ngx-cookieconsent';
 
 
 
@@ -20,6 +22,7 @@ export const appConfig: ApplicationConfig = {
     }),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)
+    provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'top' }), withEnabledBlockingInitialNavigation()),
+    provideNgcCookieConsent(cookieConfig),
   ]
 };

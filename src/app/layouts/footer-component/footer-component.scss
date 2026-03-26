@@ -10,10 +10,10 @@
     text-decoration: none;
     }
 
-.footer-link:hover {
-        color: #ff4fa3;        // твојата розева
-        text-decoration: underline;
-}
+// .footer-link:hover {
+//         color: #ff4fa3;        // твојата розева
+//         text-decoration: underline;
+// }
 
 
 .footer-icon-link {
@@ -24,3 +24,110 @@
 .footer-icon-link:hover {
     color: #ff4fa3;
 }
+
+footer.site-footer {
+  background: linear-gradient(135deg, #ffffff 0%, #ffe4ec 40%, #fce6ef 100%);
+  border-top: 1px solid rgba(245, 111, 161, 0.25);
+  color: #222;
+}
+
+.footer-link {
+  color: #4c4c4c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #f56fa1;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f56fa1;
+  transform: translateX(2px);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.footer-link:active {
+  transform: translateX(1px) scale(0.98);
+}
+
+.footer-divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(245, 111, 161, 1), rgba(255, 115, 181, 1));
+  width: 100%;
+  opacity: 0.95;
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  padding-top: 0.4rem;
+  border-top: none;
+}
+
+.footer-quick-links {
+  a {
+    color: #F56FA1;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+// footer-quick-links a {
+//   color: rgba(255, 255, 255, 0.7); /* soft white */
+//   text-decoration: none;
+//   font-size: 14px;
+//   font-weight: 500;
+//   transition: all 0.2s ease;
+// }
+
+
+// .footer-quick-links a:hover {
+//   color: #ffffff; /* brighter on hover */
+//   text-decoration: none;
+// }
+
+
+// .footer-quick-links {
+//   align-items: center;
+// }
+
+// .footer-quick-links .footer-action-btn {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 0.35rem 0.9rem;
+//   font-size: 0.88rem;
+//   font-weight: 600;
+//   border-radius: 999px;
+//   border: 1px solid #f56fa1;
+//   background: #ffffff;
+//   color: #f56fa1;
+//   text-decoration: none;
+//   transition: all 0.2s ease;
+// }
+
+// .footer-quick-links .footer-action-btn:hover {
+//   background: #f56fa1;
+//   color: #fff;
+//   transform: translateY(-1px);
+// }
+
+// .footer-quick-links .footer-action-btn:active {
+//   transform: translateY(0);
+// }

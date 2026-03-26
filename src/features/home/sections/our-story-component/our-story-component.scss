@@ -1,43 +1,183 @@
 .story-section {
     padding-block: 3rem 4rem;
+    background: linear-gradient(135deg, #ffffff 0%, #ffe4ec 40%, #fce6ef 100%);
   }
-  
+
   .story-title {
     font-size: clamp(2rem, 1.8rem + 1vw, 2.6rem);
     letter-spacing: 0.03em;
+    animation: textReveal 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+
   .story-title-highlight {
     color: #F56FA1;
     font-style: italic;
   }
-  
+
   /* ✅ default: full width (за <1200px) */
   .story-text {
     max-width: none;
     font-size: 1rem;
     line-height: 1.7;
     color: #333;
+    animation: textReveal 0.8s ease 0.2s forwards;
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+
   /* ✅ max-width само кога си во 2 колони (xl+) */
   @media (min-width: 1200px) {
     .story-text {
       max-width: 38rem;
     }
   }
-  
+
   /* ✅ лого да не биде огромно */
   .story-logo {
     width: 100%;
     max-width: 520px;
     height: auto;
+    animation: imageReveal 0.8s ease 0.4s forwards;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
   }
-  
+
   /* мобилен: логото помало и центрирано */
   @media (max-width: 767.98px) {
     .story-logo {
       max-width: 280px;
+    }
+  }
+
+  /* Translation Form Styles */
+  .translation-form-card {
+    background: #f56fa1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(245, 111, 161, 0.2);
+    padding: 2rem;
+    color: #fff;
+  }
+
+  .form-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  .form-subtitle {
+    color: #f0f0f0;
+    font-size: 1rem;
+  }
+
+  .translation-form .form-label {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .translation-form .form-control,
+  .translation-form .form-select {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .translation-form .form-control:focus,
+  .translation-form .form-select:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: #fff;
+  }
+
+  .translation-form .form-control::placeholder {
+    color: #888;
+  }
+
+  .file-upload-area {
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .file-upload-area:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .file-upload-placeholder i {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .file-upload-placeholder p {
+    margin: 0;
+    color: #f0f0f0;
+  }
+
+  .file-upload-placeholder .text-muted {
+    color: #e0e0e0 !important;
+  }
+
+  .btn-primary-pink {
+    background: linear-gradient(90deg, #ffe4ec, #ffe4ec);
+    border: none;
+    color: #f56fa1;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-primary-pink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(245, 111, 161, 0.3);
+    background: linear-gradient(90deg, #ffe4ec, #ffe4ec);
+  }
+
+  .btn-primary-pink:active {
+    transform: translateY(0);
+  }
+
+  @keyframes textReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes imageReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .translation-form-card {
+      padding: 1.5rem;
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+    }
+
+    .file-upload-area {
+      padding: 1.5rem;
     }
   }
   

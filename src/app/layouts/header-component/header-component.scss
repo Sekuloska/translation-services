@@ -1,25 +1,121 @@
-.topbar {
-    width: 100%;
-    min-height: 48px;          // висина на барот (можеш 56/64 според вкус)
-    display: flex;
-    align-items: center;       // вертикално центрира содржината
-    background-color: #f8f9fa; // исто како .bg-light, за сигурно
-  }
-  
-  .topbar > .container {
-    width: 100%;
-  }
-  
-  .th-logo-text {
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: #F56FA1;
-  }
-  
-  .header-link:hover{
-    color: #ff4fa3;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
+:host .th-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe4ec 40%, #fce6ef 100%);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+:host .th-header:hover {
+  background: linear-gradient(135deg, #fff0f8 0%, #ffd5e9 42%, #ffcae2 100%);
+}
+
+:host .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  color: #F56FA1;
+}
+
+:host .th-logo-text {
+  color: #F56FA1;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 6px rgba(245, 111, 161, 0.16);
+  transition: all 0.2s ease;
+}
+
+:host .navbar-brand:hover .th-logo-text {
+  transform: scale(1.05);
+  color: #ff4fa3;
+}
+
+:host .navbar-nav {
+  --bs-nav-link-color: #2a2a2a;
+  --bs-nav-link-hover-color: #F56FA1;
+  --bs-nav-link-active-color: #ffffff;
+}
+
+:host .header-link {
+  position: relative;
+  color: #2c2c2c;
+  font-weight: 600;
+  padding: 0.45rem 0.2rem;
+  border-radius: 0.35rem;
+  transition: color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+}
+
+:host .header-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #F56FA1;
+  border-radius: 99px;
+  transition: width 0.25s ease;
+}
+
+:host .header-link:hover {
+  color: #ff4fa3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(245, 111, 161, 0.16);
+}
+
+:host .header-link:hover::after {
+  width: 100%;
+}
+
+:host .header-link:active {
+  transform: scale(0.96);
+}
+
+:host .header-link.active,
+:host .header-link.active:hover {
+  color: #ffffff;
+  background: linear-gradient(90deg, #f56fa1, #ff73b5);
+}
+
+:host .header-link.active::after {
+  width: 100%;
+  background: #ffffff;
+}
+
+:host .navbar-toggler {
+  border-color: rgba(245, 111, 161, 0.45);
+}
+
+:host .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(245,111,161,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+:host .navbar-toggler:focus-visible,
+:host .navbar-toggler:focus {
+  outline: 2px solid rgba(245, 111, 161, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(245, 111, 161, 0.25);
+}
+
+:host .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  animation: toggleIcon 0.45s ease forwards;
+}
+
+@keyframes toggleIcon {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg); }
+}
+
+:host .collapse {
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+/* Color harmony research note:
+ * Primary: #F56FA1 (pink)
+ * Complementary: #4AB6F5 (blue), #1D2F6B (deep navy)
+ * Secondary neutrals: #FFFFFF, #FAF4F8, #333333
+ * Works well with turquoise (#4ED0C8), gold (#F5B26F) for accent.
+ */
   
