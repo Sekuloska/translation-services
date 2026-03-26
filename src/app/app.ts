@@ -4,6 +4,7 @@ import {ButtonModule} from 'primeng/button';
 import { GlobalLayoutComponent } from "./layouts/global-layout-component/global-layout-component";
 import { NgcCookieConsentService, NgcInitializationErrorEvent, NgcInitializingEvent, NgcNoCookieLawEvent, NgcStatusChangeEvent } from 'ngx-cookieconsent';
 import { Subscription } from 'rxjs';
+import { SeomanagerService } from '../core/seo-manager';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class App {
   private revokeChoiceSubscription!: Subscription;
   private noCookieLawSubscription!: Subscription;
 
-  constructor(private ccService: NgcCookieConsentService){}
+  constructor(private ccService: NgcCookieConsentService, _seoManager: SeomanagerService){}
 
   ngOnInit() {
     // subscribe to cookieconsent observables to react to main events

@@ -1,14 +1,14 @@
-# 🌍 Transhausa - Translation Services
+# 🌍 Трансхауса - Translation Services
 
 A modern, responsive translation services website built with Angular, focused on presenting services in a clean and user-friendly way.
 
-🔗 Live Demo: https://transhausa.netlify.app
+🔗 Live Demo: https://Трансхауса.netlify.app
 
 <br>
 
 ## ✨ Project Overview
 
-Transhausa is a frontend web application designed to present translation services with a modern UI and smooth user experience.
+Трансхауса is a frontend web application designed to present translation services with a modern UI and smooth user experience.
 The project is built as a single-page application (SPA) using Angular v20.
 
 <br>
